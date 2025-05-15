@@ -13,7 +13,7 @@ int main() {
 
     for (int i = n - 1; i >= 0; --i) {
         cout << numbers[i];
-        if (i > 0) cout << " "; // Prevent trailing space
+        if (i > 0) cout << " ";
     }
     cout << endl;
 
