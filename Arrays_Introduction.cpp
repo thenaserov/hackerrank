@@ -4,23 +4,25 @@
 using namespace std;
 
 int main() {
-    int n, num;
+    int n;
+    long num;
     cin >> n;
     cin.ignore();
-    if (n == 0)
-        exit(1);
 
-    vector<int> numbers;
+    vector<long> numbers;
     string input;
     getline(cin, input);
     stringstream ss(input);
     
-    while (ss >> num && numbers.size() < n) {
+    while (ss >> num)
         numbers.push_back(num);
-    }
-        
-    for(int i = numbers.size() - 1; i >= 0; --i)
-            cout << numbers[i] << " ";
-  
+
+    if (numbers.size() > n)
+        numbers.resize(n);
+
+    for (int i = numbers.size() - 1; i >= 0; --i)
+        cout << numbers[i] << " ";
+    
     return 0;
 }
+
