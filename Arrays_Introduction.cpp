@@ -1,28 +1,21 @@
 #include <iostream>
 #include <vector>
-#include <sstream>
 using namespace std;
 
 int main() {
     int n;
-    long num;
     cin >> n;
-    cin.ignore();
-
-    vector<long> numbers;
-    string input;
-    getline(cin, input);
-    stringstream ss(input);
     
-    while (ss >> num)
-        numbers.push_back(num);
+    vector<int> numbers(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> numbers[i];
+    }
 
-    if (numbers.size() > n)
-        numbers.resize(n);
+    for (int i = n - 1; i >= 0; --i) {
+        cout << numbers[i];
+        if (i > 0) cout << " "; // Prevent trailing space
+    }
+    cout << endl;
 
-    for (int i = numbers.size() - 1; i >= 0; --i)
-        cout << numbers[i] << " ";
-    
     return 0;
 }
-
