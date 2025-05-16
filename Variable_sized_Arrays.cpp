@@ -7,7 +7,6 @@ int main() {
     int n, q;
     cin >> n >> q;
     vector<vector<int>> vecs;
-    //
     for(int count = 0; count < n; count++){
         int x;
         cin >> x;
@@ -17,7 +16,6 @@ int main() {
         }
         vecs.push_back(numbers);
     }
-    //
     vector<vector<int>> subs;
     for (int i = 0; i < q; i++){
         int o, p;
@@ -34,3 +32,4 @@ int main() {
     
     return 0;
 }
+
