@@ -5,18 +5,34 @@
 #include <cstdlib>
 
 using namespace std;
+// // my mistake
+// class BadLengthException : public exception {
+// private:
+// public:
+//     BadLengthException(const int n){
+//         _n = n;
+//     }
+//     int _n;
+//     const char* what() const noexcept override {
+//         string s = to_string(_n);
+//         const char* cs = s.c_str();
+//         return cs;
+//     }
+// };
 
+// corrected
 class BadLengthException : public exception {
 private:
+    string message;
+
 public:
-    BadLengthException(const int n){
-        _n = n;
+
+    BadLengthException(int n) {
+        message = to_string(n);
     }
-    int _n;
+
     const char* what() const noexcept override {
-        string s = to_string(_n);
-        const char* cs = s.c_str();
-        return cs;
+        return message.c_str();
     }
 };
 
