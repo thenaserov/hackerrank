@@ -1,30 +1,23 @@
-#include <iostream>
+#include<iostream>
 
 using namespace std;
-//Implement the class Box
+
 class Box{
 public:
-    Box(){ l = 0; b = 0; h = 0; }
-    Box(int _l, int _b, int _h){ l = _l; b = _b; h = _h; }
-    Box(Box &copyBox) : l(copyBox.l), b(copyBox.b), h(copyBox.h){}
+    Box() : l(0), b(0), h(0) {}
+    Box(int _l, int _b, int _h) : l(_l), b(_b), h(_h) {}
+    Box(const Box &copyBox) : l(copyBox.l), b(copyBox.b), h(copyBox.h) {}
     
     int getLength(){return l;}
     int getBreadth(){return b;}
     int getHeight(){return h;}
     
-    long long CalculateVolume(){return l * b * h;}
+    long long CalculateVolume() const {return static_cast<long long>(l) * b * h;}
     
-    bool operator < (Box &b) {
-        if (this->l < b.l){
-            return true;
-        }
-        if (this->b < b.b && this->l < b.l){
-            return true;
-        }
-        if (this->h < b.h && this->b < b.b && this->l < b.l){
-            return true;
-        }
-        return false;
+    bool operator < (Box &box) const {
+        if (l != box.l) return l < box.l;
+        if (b != box.b) return b < box.b;
+        return h < box.h;
     }
     
     friend ostream & operator << (ostream &out, const Box &B){
@@ -32,7 +25,7 @@ public:
     }
 private:
     int l, b, h;
-protected:
+    
 };
 
 void check2()
