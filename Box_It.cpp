@@ -28,16 +28,12 @@ public:
     }
     
     friend ostream & operator << (ostream &out, const Box &B){
-        out << B.l << " " << B.b << " " << B.h << "\n"; return out;
+        out << B.l << " " << B.b << " " << B.h; return out;
     }
 private:
     int l, b, h;
 protected:
 };
-
-//Overload operator < as specified
-//bool operator<(Box& b)
-
 
 void check2()
 {
