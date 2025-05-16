@@ -1,12 +1,13 @@
 #include <iostream>
 #include <vector>
-#include <sstream>
+
 using namespace std;
 
 int main() {
     int n, q;
     cin >> n >> q;
     vector<vector<int>> vecs;
+    //
     for(int count = 0; count < n; count++){
         int x;
         cin >> x;
@@ -16,12 +17,13 @@ int main() {
         }
         vecs.push_back(numbers);
     }
+    //
     vector<vector<int>> subs;
-    for (int i = 0; i < n; i++){
-        int q, p;
-        cin >> q >> p;
+    for (int i = 0; i < q; i++){
+        int o, p;
+        cin >> o >> p;
         vector<int> tmp;
-        tmp.push_back(q);
+        tmp.push_back(o);
         tmp.push_back(p);
         subs.push_back(tmp);
     }
