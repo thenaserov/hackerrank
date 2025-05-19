@@ -38,8 +38,6 @@ int main()
    return 0;
 }
 
-
-
 /*
  * Enter your code here. Read input from STDIN. Print output to STDOUT
  *  input:
