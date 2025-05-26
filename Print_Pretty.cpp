@@ -15,7 +15,7 @@ int main() {
 
         /* Enter your code here */
         cout << hex << showbase << uppercase << A << endl;
-        cout << fixed << setfill('_') << setw(15) << setprecision(2) << B << endl;
+        cout << fixed << setfill('_') << setw(15) << setprecision(2) << B << showpos << endl;
         cout << scientific << uppercase << C << endl;
             
     }
